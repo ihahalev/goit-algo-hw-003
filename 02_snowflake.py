@@ -24,5 +24,18 @@ def draw_koch_curve(recur_level: int, size=300):
 
     window.mainloop()
 
-# Виклик функції
-draw_koch_curve(3)
+def main():
+    while True:
+        try:
+            level = int(input("Введіть рівень рекурсії для кривої Коха: "))
+            if level <= 0:
+                print("Рівень рекурсії повинен бути додатнім.")
+            else:
+                break
+        except ValueError:
+            print("Будь ласка, введіть коректне число.")
+
+    draw_koch_curve(level)
+
+if __name__ == "__main__":
+    main()
